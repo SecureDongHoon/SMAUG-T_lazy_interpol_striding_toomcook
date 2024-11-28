@@ -13,7 +13,7 @@
  *              - polyvec *A: pointer to input matrix of public A
  *              - polyvec *r: pointer to input vector of ephemeral key r
  **************************************************/
-void computeC1(polyvec *c1, const polyvec A[MODULE_RANK], uint16_t sw[MODULE_RANK][7][64]) {
+void computeC1(polyvec *c1, const polyvec A[MODULE_RANK], const uint16_t sw[MODULE_RANK][7][64]) {
     unsigned int i, j;
 
     // c1 = A * r
@@ -40,7 +40,7 @@ void computeC1(polyvec *c1, const polyvec A[MODULE_RANK], uint16_t sw[MODULE_RAN
  *              - polyvec *r: pointer to input vector of ephemeral key r
  **************************************************/
 void computeC2(poly *c2, const uint8_t delta[MSG_BYTES], const polyvec *b,
-               uint16_t sw[MODULE_RANK][7][64]) {
+               const uint16_t sw[MODULE_RANK][7][64]) {
     unsigned int i;
 
     // c2 = q/2 * delta

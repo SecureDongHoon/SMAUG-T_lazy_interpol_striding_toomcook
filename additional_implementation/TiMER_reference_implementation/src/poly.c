@@ -100,7 +100,7 @@ inline void poly_sub(poly *r, const poly *a, const poly *b) {
  *              - polyvec *a: pointer to input vector of polynomials
  *              - polyvec *b: pointer to input vector of polynomials
  **************************************************/
-void vec_vec_mult(poly *r, const polyvec *a, uint16_t sw[MODULE_RANK][7][64]) {
+void vec_vec_mult(poly *r, const polyvec *a, const uint16_t sw[MODULE_RANK][7][64]) {
     unsigned int i, j;
     uint16_t acc[889] = {0};
     uint16_t bcc[889] = {0};
@@ -125,7 +125,7 @@ void vec_vec_mult(poly *r, const polyvec *a, uint16_t sw[MODULE_RANK][7][64]) {
  *              - polyvec *b: pointer to input vector of polynomials
  *              - uint8_t mod: modulus (16-LOG_P) or (16-LOG_Q)
  **************************************************/
-void vec_vec_mult_add(poly *r, const polyvec *a, uint16_t sw[MODULE_RANK][7][64],
+void vec_vec_mult_add(poly *r, const polyvec *a, const uint16_t sw[MODULE_RANK][7][64],
                       const uint8_t mod) {
     unsigned int i, j;
     polyvec al;
@@ -154,7 +154,7 @@ void vec_vec_mult_add(poly *r, const polyvec *a, uint16_t sw[MODULE_RANK][7][64]
  *              - polyvec *b: pointer to input vector of polynomials
  **************************************************/
 void matrix_vec_mult_add(polyvec *r, const polyvec a[MODULE_RANK],
-                         uint16_t sw[MODULE_RANK][7][64]) {
+                         const uint16_t sw[MODULE_RANK][7][64]) {
     unsigned int i, j, k;
     polyvec at;
 
@@ -180,7 +180,7 @@ void matrix_vec_mult_add(polyvec *r, const polyvec a[MODULE_RANK],
  *              - polyvec *b: pointer to input vector of polynomials
  **************************************************/
 void matrix_vec_mult_sub(polyvec *r, const polyvec a[MODULE_RANK],
-                         uint16_t sw[MODULE_RANK][7][64]) {
+                         const uint16_t sw[MODULE_RANK][7][64]) {
     unsigned int i, j, k;
     polyvec al;
     poly res;

@@ -40,7 +40,7 @@ void genAx(polyvec A[MODULE_RANK], const uint8_t seed[PKSEED_BYTES]) {
  *              - uint8_t *e_seed: pointer to input seed of error (of
  *                                     length CRYPTO_BYTES)
  **************************************************/
-void genBx(polyvec *b, const polyvec A[MODULE_RANK], uint16_t sw[MODULE_RANK][7][64],
+void genBx(polyvec *b, const polyvec A[MODULE_RANK], const uint16_t sw[MODULE_RANK][7][64],
            const uint8_t e_seed[CRYPTO_BYTES]) {
     // b = e
     addGaussianErrorVec(b, e_seed);
@@ -86,7 +86,7 @@ void genSx_vec(secret_key *sk, const uint8_t seed[CRYPTO_BYTES]) {
  *              - const uint8_t *err_seed: pointer to input seed of error (of
  *                                     length CRYPTO_BYTES)
  **************************************************/
-void genPubkey(public_key *pk, uint16_t sw[MODULE_RANK][7][64],
+void genPubkey(public_key *pk, const uint16_t sw[MODULE_RANK][7][64],
                const uint8_t err_seed[CRYPTO_BYTES]) {
     genAx(pk->A, pk->seed);
 

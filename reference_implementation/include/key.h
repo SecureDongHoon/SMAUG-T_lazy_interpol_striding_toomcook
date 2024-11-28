@@ -21,12 +21,12 @@ typedef struct PublicKey {
 #define genAx SMAUG_NAMESPACE(genAx)
 void genAx(polyvec A[MODULE_RANK], const unsigned char seed[PKSEED_BYTES]);
 #define genBx SMAUG_NAMESPACE(genBx)
-void genBx(polyvec *b, const polyvec A[MODULE_RANK], uint16_t sw[MODULE_RANK][7][64],
+void genBx(polyvec *b, const polyvec A[MODULE_RANK], const uint16_t sw[MODULE_RANK][7][64],
            const uint8_t e_seed[CRYPTO_BYTES]);
 #define genSx_vec SMAUG_NAMESPACE(genSx_vec)
 void genSx_vec(secret_key *sk, const uint8_t seed[CRYPTO_BYTES]);
 #define genPubkey SMAUG_NAMESPACE(genPubkey)
-void genPubkey(public_key *pk, uint16_t sw[MODULE_RANK][7][64],
+void genPubkey(public_key *pk, const uint16_t sw[MODULE_RANK][7][64],
                const uint8_t err_seed[CRYPTO_BYTES]);
 
 #endif // SMAUG_KEY_H
