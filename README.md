@@ -1,5 +1,5 @@
-# SMAUG-T_public_lazy
-Apply lazy interpolation technique to Toom-Cook-4-way polynomial multiplication of SMAUG-T
+# SMAUG-T_lazy_interpol
+Apply lazy interpolation technique to <Toom-Cook-4-way + 2-level Karatsuba> polynomial multiplication of SMAUG-T
 
 
 # Build
