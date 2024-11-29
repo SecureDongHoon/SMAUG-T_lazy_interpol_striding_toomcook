@@ -1,5 +1,5 @@
 # SMAUG-T_lazy_interpol
-Apply lazy interpolation technique to <Toom-Cook-4-way + 2-level Karatsuba> polynomial multiplication of SMAUG-T
+Apply lazy interpolation technique to hybrid polynomial multiplication (Toom-Cook-4-way + 2-level Karatsuba) of SMAUG-T
 
 
 # Build
