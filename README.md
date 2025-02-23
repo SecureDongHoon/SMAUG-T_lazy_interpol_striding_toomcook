@@ -1,5 +1,5 @@
-# SMAUG-T_lazy_interpol
-Apply lazy interpolation technique to hybrid polynomial multiplication (Toom-Cook-4-way + 2-level Karatsuba) of SMAUG-T
+# SMAUG-T_lazy_interpol_strided_toomcook
+Apply lazy interpolation and striding techniques to hybrid polynomial multiplication (Toom-Cook-4-way + 2-level Karatsuba) of SMAUG-T
 
 
 # Build
