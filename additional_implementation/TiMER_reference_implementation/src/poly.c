@@ -102,13 +102,18 @@ inline void poly_sub(poly *r, const poly *a, const poly *b) {
  **************************************************/
 void vec_vec_mult(poly *r, const polyvec *a, const uint16_t sw[MODULE_RANK][7][64]) {
     unsigned int i, j;
-    uint16_t acc[889] = {0};
-    uint16_t bcc[889] = {0};
+    //uint16_t acc[889] = {0};
+    //uint16_t bcc[889] = {0};
+
+    uint16_t acc[256] = {0};
+    uint16_t bcc[256] = {0};
 
     for (i = 0; i < MODULE_RANK; i++)
     {
         toom_cook_4way_evaluate(a->vec[i].coeffs, sw[i], acc);
-        for (j = 0; j < 889; j++)
+        /*for (j = 0; j < 889; j++)
+            bcc[j] += acc[j];*/
+        for (j = 0; j < 256; j++)
             bcc[j] += acc[j];
     }
     toom_cook_4way_interpol(bcc, r->coeffs);
